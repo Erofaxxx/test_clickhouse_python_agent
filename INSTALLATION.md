@@ -91,11 +91,11 @@ nano .env
 ANTHROPIC_API_KEY=sk-ant-ваш-ключ-здесь
 
 # Параметры подключения к ClickHouse
-CLICKHOUSE_HOST=rc1b-vsrkuug8qh3pkkeg.mdb.yandexcloud.net
+CLICKHOUSE_HOST=your-clickhouse-host.mdb.yandexcloud.net
 CLICKHOUSE_PORT=8443
-CLICKHOUSE_USER=User_main
-CLICKHOUSE_PASSWORD=click_security_house_7659
-CLICKHOUSE_DATABASE=ym_sanok
+CLICKHOUSE_USER=your_username
+CLICKHOUSE_PASSWORD=your_password_here
+CLICKHOUSE_DATABASE=your_database
 CLICKHOUSE_SSL_CERT_PATH=YandexInternalRootCA.crt
 ```
 
@@ -147,10 +147,10 @@ python3 cli_agent.py
 ```
 ============================================================
   ClickHouse Analysis Agent (CLI)
-  Model: claude-sonnet-4-6-20250514
+  Model: claude-sonnet-4-6
 ============================================================
 ✅ SSL сертификат: /home/user/clickhouse_agent/YandexInternalRootCA.crt
-✅ ClickHouse подключён: rc1b-vsrkuug8qh3pkkeg.mdb.yandexcloud.net:8443/ym_sanok
+✅ ClickHouse подключён: your-clickhouse-host.mdb.yandexcloud.net:8443/your_database
 
 💬 Введите запрос. 'exit' или 'выход' для завершения.
 
@@ -222,7 +222,7 @@ cat .env | grep ANTHROPIC_API_KEY
 **Решение:** Проверьте:
 1. Доступность сервера ClickHouse:
    ```bash
-   ping rc1b-vsrkuug8qh3pkkeg.mdb.yandexcloud.net
+   ping your-clickhouse-host.mdb.yandexcloud.net
    ```
 2. Корректность учетных данных в `.env`
 3. Наличие SSL сертификата:

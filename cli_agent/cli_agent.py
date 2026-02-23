@@ -26,7 +26,7 @@ load_dotenv(Path(__file__).parent / ".env")
 
 # Конфигурация
 ANTHROPIC_API_KEY = os.environ["ANTHROPIC_API_KEY"]
-MODEL = "claude-sonnet-4-6-20250514"
+MODEL = "claude-sonnet-4-6"
 MAX_TOKENS = 8192
 
 CLICKHOUSE_HOST = os.environ["CLICKHOUSE_HOST"].replace("https://", "").replace("http://", "")
@@ -319,6 +319,8 @@ def run_agent(prompt: str, client: anthropic.Anthropic, ch: ClickHouseClient) ->
     Выполнить один запрос пользователя через агентный цикл tool_use.
     Результат печатается в stdout.
     """
+    # Sanitize input to remove surrogate characters that cause UTF-8 encoding errors
+    prompt = prompt.encode('utf-8', errors='ignore').decode('utf-8', errors='ignore')
     messages = [{"role": "user", "content": prompt}]
     max_iterations = 10
 
@@ -395,6 +397,9 @@ def run_agent(prompt: str, client: anthropic.Anthropic, ch: ClickHouseClient) ->
                         )
                     else:
                         tool_result_str = json.dumps({"error": f"Unknown tool: {tool_name}"})
+
+                    # Sanitize tool result to prevent encoding errors
+                    tool_result_str = tool_result_str.encode('utf-8', errors='ignore').decode('utf-8', errors='ignore')
 
                     # Показать результат (превью)
                     try:
