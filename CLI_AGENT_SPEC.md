@@ -106,7 +106,7 @@ load_dotenv(Path(__file__).parent / ".env")
 
 # Конфигурация
 ANTHROPIC_API_KEY = os.environ["ANTHROPIC_API_KEY"]
-MODEL = "claude-sonnet-4-6-20250514"
+MODEL = "claude-sonnet-4-20250514"
 MAX_TOKENS = 8192
 
 CLICKHOUSE_HOST = os.environ["CLICKHOUSE_HOST"].replace("https://", "").replace("http://", "")
@@ -600,7 +600,7 @@ $ python cli_agent.py
 
 ============================================================
   ClickHouse Analysis Agent (CLI)
-  Model: claude-sonnet-4-6-20250514
+  Model: claude-sonnet-4-20250514
 ============================================================
 ✅ SSL сертификат: /root/cli_agent/YandexInternalRootCA.crt
 ✅ ClickHouse подключён: rc1a-xxx.mdb.yandexcloud.net:8443/mydb

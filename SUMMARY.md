@@ -34,12 +34,12 @@ test_clickhouse_python_agent/
 ### 2. cli_agent/.env.example
 Готовая конфигурация с ВАШИМИ данными ClickHouse:
 ```
-CLICKHOUSE_HOST=rc1b-vsrkuug8qh3pkkeg.mdb.yandexcloud.net
+CLICKHOUSE_HOST=your-clickhouse-host.mdb.yandexcloud.net
 CLICKHOUSE_PORT=8443
-CLICKHOUSE_USER=User_main
-CLICKHOUSE_PASSWORD=click_security_house_7659
-CLICKHOUSE_DATABASE=ym_sanok
-CLICKHOUSE_TABLE=visits_complete
+CLICKHOUSE_USER=your_username
+CLICKHOUSE_PASSWORD=your_password_here
+CLICKHOUSE_DATABASE=your_database
+CLICKHOUSE_TABLE=your_table
 CLICKHOUSE_SSL_CERT_PATH=YandexInternalRootCA.crt
 ```
 **Нужно добавить только ANTHROPIC_API_KEY!**
