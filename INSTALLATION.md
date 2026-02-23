@@ -147,7 +147,7 @@ python3 cli_agent.py
 ```
 ============================================================
   ClickHouse Analysis Agent (CLI)
-  Model: claude-sonnet-4-20250514
+  Model: claude-sonnet-4-6
 ============================================================
 ✅ SSL сертификат: /home/user/clickhouse_agent/YandexInternalRootCA.crt
 ✅ ClickHouse подключён: your-clickhouse-host.mdb.yandexcloud.net:8443/your_database

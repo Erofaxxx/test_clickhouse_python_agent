@@ -26,7 +26,7 @@ load_dotenv(Path(__file__).parent / ".env")
 
 # Конфигурация
 ANTHROPIC_API_KEY = os.environ["ANTHROPIC_API_KEY"]
-MODEL = "claude-sonnet-4-20250514"
+MODEL = "claude-sonnet-4-6"
 MAX_TOKENS = 8192
 
 CLICKHOUSE_HOST = os.environ["CLICKHOUSE_HOST"].replace("https://", "").replace("http://", "")
